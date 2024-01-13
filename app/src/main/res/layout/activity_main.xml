@@ -43,7 +43,7 @@
             android:id="@+id/weatherCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="30sp"
+            android:textAlignment="center"
             android:text="---------"
             android:textColor="#ffffff"
             android:textSize="30sp">
@@ -54,8 +54,8 @@
             android:id="@+id/cityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="30sp"
             android:text="Fetching..."
+            android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="40sp"
             android:textStyle="bold">
@@ -79,7 +79,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Enter City"
+            android:text="Select Different City"
+            android:textStyle="bold"
             android:textColor="#ffffff"
             android:textSize="16sp" />
 

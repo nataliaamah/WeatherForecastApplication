@@ -1,6 +1,5 @@
 package com.example.weatherforecastapplication;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -72,11 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
- /*   @Override
-   protected void onResume() {
-       super.onResume();
-       getWeatherForCurrentLocation();
-    }*/
+
 
     @Override
     protected void onResume() {
