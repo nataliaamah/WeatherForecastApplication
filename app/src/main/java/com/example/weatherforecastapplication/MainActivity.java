@@ -24,6 +24,10 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     String Location_Provider = LocationManager.GPS_PROVIDER;
 
-    TextView NameofCity, weatherState, Temperature;
+    TextView NameofCity, weatherState, Temperature,amountRain, windSpeed, humidity;
     ImageView mweatherIcon;
 
     RelativeLayout mCityFinder;
@@ -54,11 +58,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // set date
+        String date = new SimpleDateFormat("E MMM dd | HH.mm a", Locale.getDefault()).format(new Date());
+        TextView timeDate = findViewById(R.id.dateTime);
+        timeDate.setText(date);
+
         weatherState = findViewById(R.id.weatherCondition);
         Temperature = findViewById(R.id.temperature);
         mweatherIcon = findViewById(R.id.weatherIcon);
         mCityFinder = findViewById(R.id.cityFinder);
         NameofCity = findViewById(R.id.cityName);
+        amountRain = findViewById(R.id.amountRain);
+        windSpeed = findViewById(R.id.windSpeed);
+        humidity = findViewById(R.id.humidity);
 
 
         mCityFinder.setOnClickListener(new View.OnClickListener() {
@@ -209,15 +221,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private  void updateUI(weatherData weather){
-
-
         Temperature.setText(weather.getmTemperature());
         NameofCity.setText(weather.getMcity());
         weatherState.setText(weather.getmWeatherType());
+
         int resourceID=getResources().getIdentifier(weather.getMicon(),"drawable",getPackageName());
         mweatherIcon.setImageResource(resourceID);
-
-
     }
 
     @Override

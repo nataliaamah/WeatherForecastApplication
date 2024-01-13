@@ -7,6 +7,8 @@ import org.json.JSONObject;
 public class weatherData {
 
     private String mTemperature,micon,mcity,mWeatherType;
+    private double amountRain, windSpeed;
+    private int humidity;
     private int mCondition;
 
     public static weatherData fromJson(JSONObject jsonObject)
@@ -22,6 +24,9 @@ public class weatherData {
             double tempResult=jsonObject.getJSONObject("main").getDouble("temp")-273.15;
             int roundedValue=(int)Math.rint(tempResult);
             weatherD.mTemperature=Integer.toString(roundedValue);
+
+            weatherD.amountRain=jsonObject.getJSONObject("rain").getDouble("1h");;
+
             return weatherD;
         }
 
@@ -107,4 +112,5 @@ public class weatherData {
     public String getmWeatherType() {
         return mWeatherType;
     }
+
 }
