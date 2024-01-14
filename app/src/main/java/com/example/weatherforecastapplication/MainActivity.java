@@ -19,8 +19,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     final float MIN_DISTANCE = 1000;
     final int REQUEST_CODE = 101;
 
-
+    List<Location> locationList;
 
     String Location_Provider = LocationManager.GPS_PROVIDER;
 
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     RelativeLayout mCityFinder;
 
-
+    DatabaseReference databaseLocation;
     LocationManager mLocationManager;
     LocationListener mLocationListner;
 
@@ -242,5 +245,8 @@ public class MainActivity extends AppCompatActivity {
             mLocationManager.removeUpdates(mLocationListner);
         }
     }
+
+
+
 
 }

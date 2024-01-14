@@ -28,14 +28,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:layout_marginLeft="30dp"
+        android:paddingLeft="20dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/background2"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical|left"
         android:hint="Enter City Name"
+        android:textColorHint="#808080"
         android:imeOptions="actionGo"
         android:inputType="textAutoCorrect"
-        android:textColor="@color/black"
-        android:textSize="20sp">
+        android:textColor="@color/white"
+        android:textSize="16sp">
 
     </EditText>
 
@@ -54,13 +56,13 @@
     </TextView>
 
     <ListView
-        android:layout_width="383dp"
         android:id="@+id/listViewLocation"
-        android:layout_height="272dp"
+        android:layout_width="365dp"
+        android:layout_height="438dp"
         android:layout_below="@id/Recently"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:padding="30dp"
-        android:layout_centerHorizontal="true">
+        android:padding="30dp">
 
     </ListView>
 
