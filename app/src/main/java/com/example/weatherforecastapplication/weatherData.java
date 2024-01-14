@@ -25,7 +25,7 @@ public class weatherData {
             int roundedValue=(int)Math.rint(tempResult);
             weatherD.mTemperature=Integer.toString(roundedValue);
 
-            weatherD.amountRain=jsonObject.getJSONObject("rain").getDouble("1h");;
+
 
             return weatherD;
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#242343"
+    android:background="@drawable/background"
     tools:context=".cityFinder">
 
     <ImageView
@@ -26,10 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/edittextdesign"
+        android:background="@drawable/background2"
         android:gravity="center_vertical|center_horizontal"
         android:hint="Enter City Name"
         android:imeOptions="actionGo"
@@ -38,6 +38,31 @@
         android:textSize="20sp">
 
     </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/Recently"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchCity"
+        android:text="Recently Searched"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="30dp"
+        android:textSize="16dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <ListView
+        android:layout_width="383dp"
+        android:id="@+id/listViewLocation"
+        android:layout_height="272dp"
+        android:layout_below="@id/Recently"
+        android:layout_marginTop="20dp"
+        android:padding="30dp"
+        android:layout_centerHorizontal="true">
+
+    </ListView>
 
 
 </RelativeLayout>

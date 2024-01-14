@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "3120496740",
+    "firebase_url": "https://weatherforecastapplicati-b5027-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "weatherforecastapplicati-b5027",
+    "storage_bucket": "weatherforecastapplicati-b5027.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3120496740:android:21fc61aad86c3805399f71",
+        "android_client_info": {
+          "package_name": "com.example.weatherforecastapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZiR9q8ozksWArzK3S57FFiU3fB3W51ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
