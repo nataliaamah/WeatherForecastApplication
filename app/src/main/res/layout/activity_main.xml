@@ -10,18 +10,30 @@
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="46dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
             android:text="Weather Forecast"
             android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp">
+            android:textColor="@color/white">
 
         </TextView>
+
+        <ImageView
+            android:id="@+id/MenuButton"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="190dp"
+            android:paddingVertical="7dp"
+            android:src="@drawable/menu_verticle">
+
+        </ImageView>
 
     </LinearLayout>
 

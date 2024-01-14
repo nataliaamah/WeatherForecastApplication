@@ -46,10 +46,12 @@ public class cityFinder extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, list);
         listViewLocation.setAdapter(adapter);
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(cityFinder.this, MainActivity.class);
+                Intent intent=new Intent(cityFinder.this,MainActivity.class);
+                intent.putExtra("City",newCity);
                 startActivity(intent);
             }
         });
@@ -66,9 +68,6 @@ public class cityFinder extends AppCompatActivity {
                     adapter.add(newCity);
                     locationInputed.add(newCity);
                 }
-                Intent intent=new Intent(cityFinder.this,MainActivity.class);
-                intent.putExtra("City",newCity);
-                startActivity(intent);
 
                 return false;
             }

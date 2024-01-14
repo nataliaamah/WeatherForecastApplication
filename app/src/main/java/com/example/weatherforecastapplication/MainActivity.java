@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseLocation;
     LocationManager mLocationManager;
     LocationListener mLocationListner;
+    ImageView menu;
 
 
     @Override
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         TextView timeDate = findViewById(R.id.dateTime);
         timeDate.setText(date);
 
+        menu = findViewById(R.id.MenuButton);
         weatherState = findViewById(R.id.weatherCondition);
         Temperature = findViewById(R.id.temperature);
         mweatherIcon = findViewById(R.id.weatherIcon);
@@ -74,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
         cloudy = findViewById(R.id.cloudy);
         windSpeed = findViewById(R.id.windSpeed);
         humidity = findViewById(R.id.humidity);
+
+        // menu button on click
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
         mCityFinder.setOnClickListener(new View.OnClickListener() {
