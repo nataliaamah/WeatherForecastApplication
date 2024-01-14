@@ -7,25 +7,35 @@ import org.json.JSONObject;
 public class weatherData {
 
     private String mTemperature,micon,mcity,mWeatherType;
-    private double amountRain, windSpeed;
-    private int humidity;
+    private String humidity;
     private int mCondition;
 
+    private String mWind;
+    private String mCloud;
     public static weatherData fromJson(JSONObject jsonObject)
     {
 
         try
         {
+
             weatherData weatherD=new weatherData();
             weatherD.mcity=jsonObject.getString("name");
             weatherD.mCondition=jsonObject.getJSONArray("weather").getJSONObject(0).getInt("id");
             weatherD.mWeatherType=jsonObject.getJSONArray("weather").getJSONObject(0).getString("main");
             weatherD.micon=updateWeatherIcon(weatherD.mCondition);
+
+            double wind = jsonObject.getJSONObject("wind").getDouble("speed");
+            weatherD.mWind = Double.toString(wind);
+
+            double cloud = jsonObject.getJSONObject("clouds").getDouble("all");
+            weatherD.mCloud = Double.toString(cloud);
+
             double tempResult=jsonObject.getJSONObject("main").getDouble("temp")-273.15;
             int roundedValue=(int)Math.rint(tempResult);
             weatherD.mTemperature=Integer.toString(roundedValue);
 
-
+            int humid = jsonObject.getJSONObject("main").getInt("humidity");
+            weatherD.humidity = Integer.toString(humid);
 
             return weatherD;
         }
@@ -42,28 +52,28 @@ public class weatherData {
 
     private static String updateWeatherIcon(int condition)
     {
-        if(condition>=0 && condition<=300)
+        if(condition>=0 && condition<=299)
         {
             return "thunderstrom1";
         }
-        else if(condition>=300 && condition<=500)
+        else if(condition>=300 && condition<=499)
         {
             return "lightrain";
         }
-        else if(condition>=500 && condition<=600)
+        else if(condition>=500 && condition<=599)
         {
             return "shower";
         }
-        else  if(condition>=600 && condition<=700)
+        else  if(condition>=600 && condition<=699)
         {
             return "snow2";
         }
-        else if(condition>=701 && condition<=771)
+        else if(condition>=700 && condition<=771)
         {
             return "fog";
         }
 
-        else if(condition>=772 && condition<=800)
+        else if(condition>=772 && condition<=799)
         {
             return "overcast";
         }
@@ -111,6 +121,18 @@ public class weatherData {
 
     public String getmWeatherType() {
         return mWeatherType;
+    }
+
+    public String getmWind() {
+        return mWind;
+    }
+
+    public String getmCloud() {
+        return mCloud;
+    }
+
+    public String getHumidity() {
+        return humidity;
     }
 
 }

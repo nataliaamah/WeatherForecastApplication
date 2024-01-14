@@ -14,16 +14,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -51,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     String Location_Provider = LocationManager.GPS_PROVIDER;
 
-    TextView NameofCity, weatherState, Temperature,amountRain, windSpeed, humidity;
+    TextView NameofCity, weatherState, Temperature, cloudy, windSpeed, humidity;
     ImageView mweatherIcon;
 
     RelativeLayout mCityFinder;
@@ -76,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         mweatherIcon = findViewById(R.id.weatherIcon);
         mCityFinder = findViewById(R.id.cityFinder);
         NameofCity = findViewById(R.id.cityName);
-        amountRain = findViewById(R.id.amountRain);
+        cloudy = findViewById(R.id.cloudy);
         windSpeed = findViewById(R.id.windSpeed);
         humidity = findViewById(R.id.humidity);
 
@@ -84,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         mCityFinder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, cityFinder.class);
                 startActivity(intent);
             }
@@ -232,6 +228,9 @@ public class MainActivity extends AppCompatActivity {
         Temperature.setText(weather.getmTemperature());
         NameofCity.setText(weather.getMcity());
         weatherState.setText(weather.getmWeatherType());
+        cloudy.setText(weather.getmCloud()+"%");
+        humidity.setText(weather.getHumidity()+"%");
+        windSpeed.setText(weather.getmWind()+" km/h");
 
         int resourceID=getResources().getIdentifier(weather.getMicon(),"drawable",getPackageName());
         mweatherIcon.setImageResource(resourceID);

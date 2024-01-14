@@ -113,14 +113,14 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/rainPic"
+                    android:id="@+id/cloudPic"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/lightrain" />
+                    app:srcCompat="@drawable/cloudy" />
 
                 <TextView
-                    android:id="@+id/amountRain"
+                    android:id="@+id/cloudy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="23%"
@@ -129,10 +129,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/rainTxt"
+                    android:id="@+id/cloudtxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rain"
+                    android:text="Cloudiness"
                     android:textAlignment="center"
                     android:textColor="@color/white" />
             </LinearLayout>

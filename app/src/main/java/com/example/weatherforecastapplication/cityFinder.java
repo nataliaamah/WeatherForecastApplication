@@ -31,7 +31,7 @@ public class cityFinder extends AppCompatActivity {
     ListView listViewLocation;
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    String locationInputed [] = new String[100];
+    private List<String> locationInputed = new ArrayList<>();
     DatabaseReference databaseLocation;
     String newCity;
     int n=0;
@@ -64,7 +64,7 @@ public class cityFinder extends AppCompatActivity {
                     //store artist inside unique id
                     databaseLocation.child(id).setValue(newCity);
                     adapter.add(newCity);
-                    rePrint(newCity);
+                    locationInputed.add(newCity);
                 }
                 Intent intent=new Intent(cityFinder.this,MainActivity.class);
                 intent.putExtra("City",newCity);
@@ -77,32 +77,17 @@ public class cityFinder extends AppCompatActivity {
 
     }
 
-    public void rePrint(String location)
-    {
-        locationInputed[n]=location;
-        n = n+1;
-    }
-
     @Override
     public void onResume(){
         super.onResume();
-        int count = 0;
-        while(locationInputed[count] != null)
-        {
-            if(count > 0)
-            {
-                boolean same = true;
-                for(int n=0; n<count;n++)
-                {
-                    if(!locationInputed[n].equalsIgnoreCase(locationInputed[count]))
-                        same = false;
-                }
-                if(same == false)
-                    adapter.add(locationInputed[count]);
-            }
-            else adapter.add(locationInputed[count]);
-
-            count++;
+        if (listViewLocation != null && adapter != null) {
+            // Refresh the ListView here
+            adapter.notifyDataSetChanged();
+        } else {
+            // Initialize the ListView and adapter here
+            listViewLocation = findViewById(R.id.listViewLocation);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, locationInputed);
+            listViewLocation.setAdapter(adapter);
         }
     }
 
