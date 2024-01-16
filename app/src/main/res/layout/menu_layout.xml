@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    tools:context=".Menu">
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="36dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/left">
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weatherForecast"
+            android:text="Weather Forecast Application"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="30dp"/>
+
+
+        <TextView
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/weatherForecast"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:lineHeight="20dp"
+            android:lines="4"
+            android:maxLines="4"
+            android:text="This is a simple weather forecast application that \n allows users to search for the weather of a specific city.The application uses the Openweathermap API \n to fetch the weather data."
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="30dp"
+            android:text="Features"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="15dp"
+            android:lines="4"
+            android:maxLines="4"
+            android:text="* User can search for the weather of a specific city\n* The application displays the temperature, weather\n
+type, humidity, wind speed, and amount of rain "
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="30dp"
+            android:text="Our development team consist of \n4 brilliant individuals :"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="15dp"
+            android:lines="6"
+            android:text="1. Nur Afiqah Binti Abdul Rahim [2022842002]\n2.Nur Illaila Nadiah Binti Zairi Noor [2022899674]\n3. Amera Natalia Mah Binti Muhammad Adam Mah [2022462176]\n4. Aliah Anisah Binti Apiszal [2022622154]\n5. Adlina Misha Binti Mohamad Azli [2023437556]"
+            android:textAlignment="viewStart"
+            android:lineHeight="23dp"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="33dp"
+            android:text="Get source code : "
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/Link"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

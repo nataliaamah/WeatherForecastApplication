@@ -42,4 +42,5 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.loopj.android:android-async-http:1.4.9")
+    implementation ("androidx.appcompat:appcompat:1.3.0")
 }
