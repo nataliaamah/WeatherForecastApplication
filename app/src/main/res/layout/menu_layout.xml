@@ -134,8 +134,10 @@ type, humidity, wind speed, and amount of rain "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="11dp"
             android:text="@string/Link"
+            android:textColorLink="@color/plum"
+            android:textSize="17sp"
             android:textColor="@color/white" />
     </LinearLayout>
 
