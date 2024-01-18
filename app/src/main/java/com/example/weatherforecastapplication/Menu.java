@@ -17,6 +17,9 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.menu_layout);
         //setupHyperlink();
         ImageView backButton = findViewById(R.id.backButton);
+        TextView textView = findViewById(R.id.textview);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,11 +30,4 @@ public class Menu extends AppCompatActivity {
         });
     }
 
-    /*private void setupHyperlink() {
-        TextView linkTextView = findViewById(R.id.hyperlink_txt);
-
-        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-     */
 }
