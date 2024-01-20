@@ -8,8 +8,8 @@
 
 ## Technologies Used
 - Android Studio
-- Java
 - OpenWeatherMap API
+- Firebase
 
 ### Setup
 1. Clone the repository
