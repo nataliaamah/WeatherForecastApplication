@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">WeatherForecastApplication</string>
-    <string name="Link">Click <a href = "https://github.com/Illailanadiah/WeatherForecastApplication">here </a>to open github.</string>
+    <string name="Link">Click <a href = "https://github.com/nataliaamah/WeatherForecastApplication">here </a>to open github.</string>
 </resources>
